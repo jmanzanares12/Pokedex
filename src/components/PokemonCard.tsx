@@ -2,8 +2,9 @@ import React, { useMemo } from 'react';
 import { useGetPokemon } from '../hooks/useGetPokomon';
 import { PokemonListItem } from '../interface/PokemonListitem';
 import { getMainPokemonType } from '../utils/getMainPokemonType';
-import { capitalizeFirtsLetter } from '../utils/capitalizeFirtsLetter';
+import { capitalizeFirstLetter } from '../utils/capitalizeFirtsLetter';
 import Label from '../shared/Label';
+import { FavoriteButton } from '../shared/Button';
 
 interface Props {
     pokemon?: PokemonListItem;
@@ -19,9 +20,10 @@ const PokemonCard: React.FC<Props> = ({ pokemon, pokemonId }) => {
 
 
     return (
-        <div className={`${mainType ?? 'default'}-background w-56 h-56 rounded-2xl shadow-md p-4 transform hover:scale-105 transition duration-300 ease-in-out`}>
+        <div className={`${mainType ?? 'default'}-background relative w-56 h-56 rounded-2xl shadow-md p-4 transform hover:scale-105 transition duration-300 ease-in-out`}>
+            <FavoriteButton pokemonId={pokemonData?.id ?? 0}  />
             <div className='flex flex-col items-center mx-auto'>
-                <Label>{pokemonData?.name ? capitalizeFirtsLetter(pokemonData?.name) : ''}</Label>
+                <Label>{pokemonData?.name ? capitalizeFirstLetter(pokemonData?.name) : ''}</Label>
                 <img src={pokemonData?.sprites?.front_default} alt={pokemonData?.name ?? ''} className='w-40 h-40 mx-auto' />
             </div>
         </div>
