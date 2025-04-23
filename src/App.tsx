@@ -1,10 +1,14 @@
+import React from 'react'
+import Providers from "./providers"
+import AppRoutes from "./routes"
 
-const App = () => {
-
+const App: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-2xl text-center text-gray-700 font-semibold mt-10">Bienvenido a tu Pokedex 🐱</h1>
-    </div>
+    <Providers>
+      <div className='mt-5 mb-5 w-9/12 mx-auto'>
+        <AppRoutes />
+      </div>
+    </Providers>
   )
 }
 
