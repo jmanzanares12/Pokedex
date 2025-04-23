@@ -19,7 +19,7 @@ const PokemonCard: React.FC<Props> = ({ pokemon, pokemonId }) => {
 
 
     return (
-        <div className={`${mainType ?? 'default'}-background w-56 h-56 rounded-lg shadow-lg p-4`}>
+        <div className={`${mainType ?? 'default'}-background w-56 h-56 rounded-2xl shadow-md p-4 transform hover:scale-105 transition duration-300 ease-in-out`}>
             <div className='flex flex-col items-center mx-auto'>
                 <Label>{pokemonData?.name ? capitalizeFirtsLetter(pokemonData?.name) : ''}</Label>
                 <img src={pokemonData?.sprites?.front_default} alt={pokemonData?.name ?? ''} className='w-40 h-40 mx-auto' />
