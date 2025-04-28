@@ -29,7 +29,7 @@ const PokemonInfo = () => {
                 <h1 className='text-2xl font-bold'>{capitalizeFirstLetter(pokemonData?.name ?? '')}</h1>
                 <span>{`Weight: ${convertLbsToKg(pokemonData?.weight ?? 0)} kg`}</span>
                 <span>{`Height: ${convertInchesToCm(pokemonData?.height ?? 0)} cm`}</span>
-                <PokemonSprites pokemonName={pokemonData?.name ?? ''} />
+                <PokemonSprites pokemonName={pokemonData?.name ?? ''} />    
             </div>
         </div>
     )
