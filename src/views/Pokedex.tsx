@@ -10,4 +10,3 @@ const Pokedex: React.FC = () => {
 }
 
 export default Pokedex; 
-

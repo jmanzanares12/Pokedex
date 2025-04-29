@@ -21,15 +21,24 @@ export const PokemonCard: React.FC<Props> = ({pokemon, pokemonId}) => {
     const handleClick = () => navigate(`/pokemon/${pokemonData?.name}`);
 
     return (
-        <div className={`${mainType ?? 'default'}-background relative w-56 h-56 rounded-2xl shadow-md p-4 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer`}>
+        <div 
+            className={`
+                ${mainType ?? 'default'}-background 
+                relative w-full max-w-xs aspect-square rounded-2xl
+                shadow-md hover:shadow-xl p-4 cursor-pointer`}
+            >
             <FavoriteButton pokemonId={pokemonData?.id ?? 0} />
             <TypeIcons types={pokemonData?.types ?? []} />
-            <div className='flex flex-col items-center mx-auto' onClick={handleClick} >
-                <Label>{pokemonData?.name ? capitalizeFirstLetter(pokemonData?.name) : ''}</Label>
+            <div className='flex flex-col items-center justify-center h-full gap-3' onClick={handleClick} >
+                <Label>
+                    <span className='text-lg font-semibold text-gray-800'>
+                        {pokemonData?.name ? capitalizeFirstLetter(pokemonData?.name) : ''}
+                    </span>
+                </Label>
                 <img 
                     src={pokemonData?.sprites?.front_default} 
                     alt={pokemonData?.name ?? ''} 
-                    className='w-40 h-40 mx-auto rounded-lg' 
+                    className='w-32 h-32 mx-auto rounded-xl' 
                 />
             </div>
         </div>

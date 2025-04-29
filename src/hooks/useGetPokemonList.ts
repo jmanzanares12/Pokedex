@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const useGetPokemonList = () => {
-    const [url, setUrl] = useState(`${BASE_URL}pokemon?limit=36`);
+    const [url, setUrl] = useState(`${BASE_URL}pokemon?limit=40`);
 
     const { data, isLoading, error } = useQuery<Props>({
         queryKey: ['pokemonList', url],
