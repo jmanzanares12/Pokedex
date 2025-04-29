@@ -6,6 +6,7 @@ import { capitalizeFirstLetter } from '../utils/capitalizeFirtsLetter';
 import Label from '../shared/Label';
 import { FavoriteButton } from '../shared/Button';
 import { useNavigate } from 'react-router-dom';
+import { TypeIcons } from './TypeIcons';
 
 interface Props {
     pokemon?: PokemonListItem;
@@ -22,6 +23,7 @@ export const PokemonCard: React.FC<Props> = ({pokemon, pokemonId}) => {
     return (
         <div className={`${mainType ?? 'default'}-background relative w-56 h-56 rounded-2xl shadow-md p-4 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer`}>
             <FavoriteButton pokemonId={pokemonData?.id ?? 0} />
+            <TypeIcons types={pokemonData?.types ?? []} />
             <div className='flex flex-col items-center mx-auto' onClick={handleClick} >
                 <Label>{pokemonData?.name ? capitalizeFirstLetter(pokemonData?.name) : ''}</Label>
                 <img 
