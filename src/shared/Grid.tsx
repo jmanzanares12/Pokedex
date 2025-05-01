@@ -7,8 +7,8 @@ interface GridProps {
 }
 
 export const Grid: React.FC<GridProps> = ({ children, getNext, getPrevious }) => (
-    <div className='max-w-7xl mx-auto px-4'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6'>
+    <div className='max-w-7xl mx-auto px-5'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-7'>
             {children}
         </div>
         <div className='flex justify-center mt-8 gap-4'>
@@ -31,4 +31,3 @@ export const Grid: React.FC<GridProps> = ({ children, getNext, getPrevious }) =>
         </div>
     </div>
 )
-

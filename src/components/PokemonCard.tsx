@@ -24,8 +24,9 @@ export const PokemonCard: React.FC<Props> = ({pokemon, pokemonId}) => {
         <div 
             className={`
                 ${mainType ?? 'default'}-background 
-                relative w-full max-w-xs aspect-square rounded-2xl
-                shadow-md hover:shadow-xl p-4 cursor-pointer`}
+                relative w-full max-w-[240px] aspect-[3/4] rounded-2xl shadow-lg
+                shadow-md hover:shadow-xl p-6 cursor-pointer
+                `}
             >
             <FavoriteButton pokemonId={pokemonData?.id ?? 0} />
             <TypeIcons types={pokemonData?.types ?? []} />
