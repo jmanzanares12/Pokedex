@@ -7,6 +7,7 @@ import Label from '../shared/Label';
 import { FavoriteButton } from '../shared/Button';
 import { useNavigate } from 'react-router-dom';
 import { TypeIcons } from './TypeIcons';
+import { useSearchStore } from '../store/useSearchStore';
 
 interface Props {
     pokemon?: PokemonListItem;
@@ -14,11 +15,15 @@ interface Props {
 }
 
 export const PokemonCard: React.FC<Props> = ({pokemon, pokemonId}) => {
+    const closeModal = useSearchStore((state) => state.closeModal);
     const {data: pokemonData} = useGetPokemon(pokemon?.name, pokemonId);
     const mainType = useMemo(() => pokemonData && getMainPokemonType(pokemonData), [pokemonData]);
     const navigate = useNavigate();
 
-    const handleClick = () => navigate(`/pokemon/${pokemonData?.name}`);
+    const handleClick = () => {
+        navigate(`/pokemon/${pokemonData?.name}`);
+        closeModal();
+    };
 
     return (
         <div 
