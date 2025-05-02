@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Modal from 'react-modal';
 
+Modal.setAppElement('#root');
 
 const Pokedex = React.lazy(() => import('../views/Pokedex'))
 const PokemonProfile = React.lazy(() => import('../views/PokemonProfile'))
