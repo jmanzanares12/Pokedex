@@ -1,109 +1,57 @@
 @import "tailwindcss";
 
-.bug-background {
-    background: url('/public/assets/bug.jpg');
-    background-size: cover;
-    background-position: bottom;
+@layer components {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-md border border-white/30 shadow-sm;
+  }
+
+  .pokemon-card {
+    perspective: 1000px;
+  }
+
+  .pokemon-card img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    will-change: transform;
+  }
+
+  .nav-link-active {
+    @apply relative text-red-500;
+  }
+
+  .nav-link-active::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-red-500 rounded-full;
+  }
 }
 
-.fire-background {
-    background: url('/public/assets/fire.jpg');
-    background-size: cover;
-    background-position: bottom;
+[class*="-background"] {
+  background-size: cover;
+  background-position: bottom; 
+  background-repeat: no-repeat;
+  
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  ), var(--bg-image);
 }
 
-.grass-background {
-    background: url('/public/assets/grass.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.ice-background {
-    background: url('/public/assets/ice.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.normal-background {
-    background: url('/public/assets/normal.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.poison-background {
-    background: url('/public/assets/poison.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.psychic-background {
-    background: url('/public/assets/psychic.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.rock-background {
-    background: url('/public/assets/rock.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.water-background {
-    background: url('/public/assets/water.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.fairy-background {
-    background: url('/public/assets/fairy.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.fighting-background {
-    background: url('/public/assets/fighting.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.ghost-background {
-    background: url('/public/assets/ghost.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.ground-background {
-    background: url('/public/assets/ground.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.electric-background {
-    background: url('/public/assets/electric.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.steel-background {
-    background: url('/public/assets/steel.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.dragon-background {
-    background: url('/public/assets/dragon.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.dark-background {
-    background: url('/public/assets/dark.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
-
-.shadow-background {
-    background: url('/public/assets/shadow.jpg');
-    background-size: cover;
-    background-position: bottom;
-}
+.bug-background { --bg-image: url('/public/assets/bug.jpg'); }
+.fire-background { --bg-image: url('/public/assets/fire.jpg'); }
+.grass-background { --bg-image: url('/public/assets/grass.jpg'); }
+.ice-background { --bg-image: url('/public/assets/ice.jpg'); }
+.normal-background { --bg-image: url('/public/assets/normal.jpg'); }
+.poison-background { --bg-image: url('/public/assets/poison.jpg'); }
+.psychic-background { --bg-image: url('/public/assets/psychic.jpg'); }
+.rock-background { --bg-image: url('/public/assets/rock.jpg'); }
+.water-background { --bg-image: url('/public/assets/water.jpg'); }
+.fairy-background { --bg-image: url('/public/assets/fairy.jpg'); }
+.fighting-background { --bg-image: url('/public/assets/fighting.jpg'); }
+.ghost-background { --bg-image: url('/public/assets/ghost.jpg'); }
+.ground-background { --bg-image: url('/public/assets/ground.jpg'); }
+.electric-background { --bg-image: url('/public/assets/electric.jpg'); }
+.steel-background { --bg-image: url('/public/assets/steel.jpg'); }
+.dragon-background { --bg-image: url('/public/assets/dragon.jpg'); }
+.dark-background { --bg-image: url('/public/assets/dark.jpg'); }
+.shadow-background { --bg-image: url('/public/assets/shadow.jpg'); }

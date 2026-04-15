@@ -7,15 +7,17 @@ interface GridProps {
 }
 
 export const Grid: React.FC<GridProps> = ({ children, getNext, getPrevious }) => (
-    <div className='max-w-7xl mx-auto px-5'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-7 place-items-center'>
+    <div className='max-w-7xl mx-auto px-6 py-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center'>
             {children}
         </div>
-        <div className='flex justify-center mt-8 gap-4'>
+        <div className='flex justify-center mt-12 gap-6'>
             {getPrevious && (
                 <button
                     onClick={getPrevious}
-                    className='bg-white border border-gray-300 rounded-xl shadow px-6 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition'
+                    className='glass-panel bg-white/50 px-8 py-2.5 rounded-2xl text-gray-700 font-semibold 
+                               hover:bg-red-500 hover:text-white hover:-translate-x-1 
+                               active:scale-95 transition-all duration-300 shadow-sm flex items-center gap-2'
                 >
                     Previous
                 </button>
@@ -23,7 +25,9 @@ export const Grid: React.FC<GridProps> = ({ children, getNext, getPrevious }) =>
             {getNext && (
                 <button
                     onClick={getNext}
-                    className='bg-white border border-gray-300 rounded-xl shadow px-6 py-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition'
+                    className='glass-panel bg-white/50 px-8 py-2.5 rounded-2xl text-gray-700 font-semibold 
+                               hover:bg-red-500 hover:text-white hover:translate-x-1 
+                               active:scale-95 transition-all duration-300 shadow-sm flex items-center gap-2'
                 >
                     Next
                 </button>
